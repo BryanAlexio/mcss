@@ -19,7 +19,7 @@ scripts de análisis de la tesis.
 ## Instalación
 
 ```bash
-git clone https://github.com/USUARIO/mcss.git
+git clone https://github.com/BryanAlexio/mcss.git
 cd mcss
 python -m venv .venv && source .venv/bin/activate   # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
