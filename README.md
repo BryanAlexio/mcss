@@ -11,7 +11,7 @@ scripts de análisis de la tesis.
 | `firmware/` | Firmware del módulo de sincronización ESP32-C3 (`MASTER_ESP32_fixed`; `IMT_INICIO_FIN2_previo` es la versión anterior). |
 | `mcss/` | Aplicación central: GUI (`sistema_multisensor.py`), cámaras en procesos independientes (`multi_camera_manager_mp3.py`), driver LiDAR (`velodyne_manager_karen.py`), visualizador 3D (`lidar_visualizer2.py`) y calibración (`dbkaren.xml`). |
 | `fusion/` | Fusión multisensor y métricas de calidad temporal (`fusion_sensores_v7.py`). |
-| `analisis/` | Scripts de análisis: `sync_analyzer_unified.py`, `vbo_trigger_batch.py`, `vbo_trigger_sync.py`. |
+| `analisis/` | Scripts de análisis: `generar_figuras_mcss.py` (figuras de los Caps. 5 y 6 a partir de `validacion_mcss.json`), `sync_analyzer_unified.py`, `vbo_trigger_batch.py`, `vbo_trigger_sync.py`. |
 | `ecg_inalambrico/` | Nodos ESP32-S3 (`nodos/`), maestro CYD (`maestro_control/`), controlador Raspberry Pi (`maestro_datos/`), servidor web React/Node (`servidor/`) y piezas 3D (`hardware/`). |
 | `config.example.py` | Plantilla de configuración, sin credenciales. |
 | `requirements.txt` | Dependencias de Python. |
@@ -32,6 +32,7 @@ cp config.example.py config.py                       # y complete sus credencial
 python mcss/sistema_multisensor.py        # adquisición
 python fusion/fusion_sensores_v7.py       # fusión multisensor
 python analisis/vbo_trigger_batch.py RAIZ # métricas de telemetría VBOX
+python analisis/generar_figuras_mcss.py validacion_mcss.json figuras --hwsw comparacion_hw_sw.csv --sesiones tablas/sesiones.csv
 python analisis/sync_analyzer_unified.py  # análisis de sincronización
 ```
 
