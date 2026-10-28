@@ -1,4 +1,5 @@
 # MCSS — Sistema de adquisición multisensor sincronizado
+   [![DOI](https://zenodo.org/badge/1437503499.svg)](https://doi.org/10.5281/zenodo.23741976)
 
 Código fuente del MCSS (EEG, ECG, BIOPAC, cámaras, LiDAR Velodyne HDL-64E y VBOX),
 del módulo de sincronización ESP32-C3, del prototipo de ECG inalámbrico y de los
@@ -51,5 +52,5 @@ MIT — ver `LICENSE`.
 
 ## Cita
 
-Si usa este software, cite la versión archivada en Zenodo: DOI `10.5281/zenodo.XXXXXXX`
-(se completa al archivar la primera versión).
+   Si usa este software, cite la versión archivada en Zenodo:
+   DOI [10.5281/zenodo.23741977](https://doi.org/10.5281/zenodo.23741977)
