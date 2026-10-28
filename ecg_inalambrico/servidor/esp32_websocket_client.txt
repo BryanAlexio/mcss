@@ -1,0 +1,85 @@
+#include <WiFi.h>
+#include <WebSocketsClient.h>
+
+// Configuración WiFi
+const char* ssid = "TU_WIFI_SSID";
+const char* password = "TU_WIFI_PASSWORD";
+
+// Configuración WebSocket
+const char* websocket_server = "192.168.1.100"; // IP de tu Raspberry Pi
+const int websocket_port = 8765;
+
+// Pin del LED
+const int LED_PIN = 2; // LED integrado del ESP32
+
+WebSocketsClient webSocket;
+
+void setup() {
+  Serial.begin(115200);
+  
+  // Configurar LED
+  pinMode(LED_PIN, OUTPUT);
+  digitalWrite(LED_PIN, LOW);
+  
+  // Conectar a WiFi
+  WiFi.begin(ssid, password);
+  Serial.print("Conectando a WiFi");
+  
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+  
+  Serial.println();
+  Serial.println("WiFi conectado!");
+  Serial.print("IP: ");
+  Serial.println(WiFi.localIP());
+  
+  // Configurar WebSocket
+  webSocket.begin(websocket_server, websocket_port, "/");
+  webSocket.onEvent(webSocketEvent);
+  webSocket.setReconnectInterval(5000);
+  
+  Serial.println("Cliente WebSocket iniciado");
+}
+
+void loop() {
+  webSocket.loop();
+  delay(10);
+}
+
+void webSocketEvent(WStype_t type, uint8_t * payload, size_t length) {
+  switch(type) {
+    case WStype_DISCONNECTED:
+      Serial.println("WebSocket Desconectado");
+      digitalWrite(LED_PIN, LOW);
+      break;
+      
+    case WStype_CONNECTED:
+      Serial.printf("WebSocket Conectado a: %s\n", payload);
+      digitalWrite(LED_PIN, LOW);
+      break;
+      
+    case WStype_TEXT:
+      Serial.printf("Mensaje recibido: %s\n", payload);
+      
+      // Si recibimos "ok", encender LED
+      if (strcmp((char*)payload, "ok") == 0) {
+        digitalWrite(LED_PIN, HIGH);
+        Serial.println("LED ENCENDIDO");
+      }
+      // Si recibimos "off", apagar LED
+      else if (strcmp((char*)payload, "off") == 0) {
+        digitalWrite(LED_PIN, LOW);
+        Serial.println("LED APAGADO");
+      }
+      break;
+      
+    case WStype_ERROR:
+      Serial.printf("Error WebSocket: %s\n", payload);
+      break;
+      
+    default:
+      break;
+  }
+}

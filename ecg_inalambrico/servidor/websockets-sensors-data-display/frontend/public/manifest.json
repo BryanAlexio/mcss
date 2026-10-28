@@ -1,0 +1,35 @@
+{
+  "short_name": "ECG CICATA",
+  "name": "Sistema ECG Tiempo Real - CICATA Querétaro IPN",
+  "description": "Sistema de adquisición y monitoreo ECG en tiempo real desarrollado en CICATA Querétaro - Instituto Politécnico Nacional",
+  "icons": [
+    {
+      "src": "ipn-favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "ipn-logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "ipn-logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#722F37",
+  "background_color": "#FAFAFA",
+  "orientation": "landscape-primary",
+  "categories": ["medical", "education", "productivity"],
+  "lang": "es",
+  "scope": "/",
+  "developer": {
+    "name": "Ing. Bryan Alexis Jiménez Aguilar",
+    "institution": "CICATA Querétaro - Instituto Politécnico Nacional",
+    "program": "Maestría en Tecnología Avanzada"
+  }
+}

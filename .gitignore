@@ -1,0 +1,29 @@
+# Credenciales locales
+config.py
+*.env
+.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Node
+node_modules/
+build/
+
+# Datos de sesiones (pueden ser muy grandes / datos de personas)
+*.pcap
+*.vbo
+*.VBO
+*.csv
+*.mp4
+*.avi
+*.bag
+sesiones/
+resultados/
+
+# Sistema
+.DS_Store
+Thumbs.db

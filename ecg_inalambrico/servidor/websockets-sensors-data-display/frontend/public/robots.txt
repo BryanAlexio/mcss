@@ -1,0 +1,18 @@
+# https://www.robotstxt.org/robotstxt.html
+# Sistema ECG Tiempo Real - CICATA Querétaro IPN
+# Desarrollado por: Ing. Bryan Alexis Jiménez Aguilar
+# Maestría en Tecnología Avanzada
+
+User-agent: *
+Disallow: /admin/
+Disallow: /api/
+Disallow: /backend/
+Allow: /
+
+# Sitemap
+Sitemap: /sitemap.xml
+
+# Información del proyecto
+# Institution: CICATA Querétaro - Instituto Politécnico Nacional
+# Program: Maestría en Tecnología Avanzada
+# Project: Sistema de adquisición ECG en tiempo real con ESP32 y WebSockets

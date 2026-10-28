@@ -1,0 +1,39 @@
+{
+  "name": "websockets-sensors-data-display",
+  "version": "1.0.0",
+  "description": "Sistema ECG en Tiempo Real con WebSockets - CICATA Querétaro IPN",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node backend/server",
+    "server": "nodemon backend/server",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "author": "Ing. Bryan Alexis Jiménez Aguilar <bryan.jimenez@cicata.ipn.mx> (CICATA Querétaro - IPN)",
+  "license": "MIT",
+  "keywords": [
+    "ECG",
+    "WebSockets",
+    "ESP32",
+    "Real-time",
+    "Medical",
+    "IPN",
+    "CICATA",
+    "Tecnología Avanzada"
+  ],
+  
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.2",
+    "ws": "^8.4.0"
+  },
+  "devDependencies": {
+    "concurrently": "^6.5.1",
+    "nodemon": "^2.0.15"
+  },
+  "institution": "CICATA Querétaro - Instituto Politécnico Nacional",
+  "program": "Maestría en Tecnología Avanzada",
+  "supervisor": "Dr. [Nombre del Director de Tesis]",
+  "description_es": "Sistema de adquisición y monitoreo de señales ECG en tiempo real utilizando ESP32 y WebSockets, desarrollado como parte de la Maestría en Tecnología Avanzada en CICATA Querétaro del Instituto Politécnico Nacional."
+}
